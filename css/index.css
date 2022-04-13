@@ -1,0 +1,304 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* { margin:0; padding:0; box-sizing:border-box }
+ul { list-style:none}
+body { font: 20px/1.6 'GangwonEdu_OTFBoldA', sans-serif; color:#555; }
+a { color: inherit; text-decoration: none;}
+.row { 
+    max-width: 1800px; 
+    margin:0 auto; 
+    height: 760px;
+}
+
+/* 메뉴 */
+#menu {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 100%;
+    background: transparent;
+    right: 125px;
+    bottom: 150px;
+    color: #000;
+    font-size: 40px;
+    letter-spacing: 10PX;
+    z-index: 1;
+    align-items: flex-end;
+    justify-content: center;
+}
+#menu #nav {
+    text-align: center;
+}
+#nav li { 
+    display: inline-block;    
+    margin: 5px 0 0 50px;
+    transition:all 0.5s;
+    
+}
+#nav li:hover { color:#dea5a4 } 
+#nav li.on {
+    color:#dea5a4;
+}
+
+ /* go top(smileflower) 이미지 */
+.gotop img { width: 150px; }
+
+
+/* 전체 페이지 */
+#wrap { 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* 섹션 */
+section { 
+    width: 100vw;
+    height: 100vh;
+    position: relative; 
+}
+
+/* 첫번째 박스 intro */
+#sect1 > .sect1center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+#sect1 .mainimg { background: url(../img/ocean.jpeg);
+    height: 100%; 
+    width: 100%;
+}
+#sect1 .sect1txt { 
+    position: absolute;
+    top:30%;
+    left: 30%;
+    font-size: 50px;
+}
+
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+}
+  
+.blink {
+    animation: blink-effect 1s step-end infinite;
+}
+
+#sect1 .sect1txt p:first-child {
+    color: #5b87f6;
+}
+#sect1 .copy{
+    float: right;
+    font-size: 15px;
+}
+
+/* 두번째 박스 profile & 스킬 그래프 */
+#sect2 { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;    
+}
+#sect2 .row { 
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#sect2 .propie {
+    display: flex;
+    justify-content: space-around;
+}
+#sect2 h1 { font-size: 80px;
+    position: absolute; top:0; left: 40% 
+}
+#sect2 .imgCon .proimg {
+    background: url(../img/lee.JPG) center no-repeat;
+    width:354px; height: 472px;
+    transform: translateY(-10%);
+    border-radius: 50%;
+}
+#sect2 .procont {
+    display: block;
+    padding-left: 20px;
+    text-align: center;
+}
+#sect2 .procont span {
+    color:#5b87f6
+}
+#sect2 .procont p {
+    font-size: 23px;
+}
+#sect2 .edu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(30%);
+}
+#sect2 .pie { 
+    display:flex; flex-flow:wrap; 
+    align-content:center; justify-content:center;
+    margin: auto;
+    width: 70%;
+    height: 500px;
+    padding-top: 80px;
+} 
+#sect2 .pie .sect2txt { 
+    position: absolute;
+    font-size: 50px;
+    top: 50%;
+    right: 30%;
+}
+#sect2 .pie .container { 
+    width:33.33%;
+    margin-bottom:50px;
+    text-align:center; 
+    position:relative;
+    font-size: 20px;
+    color: #000;
+    flex-grow: 1;
+}
+.pBox { width:180px; height:180px; 
+    position:absolute; line-height:180px; 
+}
+
+
+/* 세번째 박스 포트폴리오 3개 */
+#sect3 { position: relative;}
+#sect3 h2 {
+    position: absolute;
+    top:150px;
+    left: 0;
+    font-size: 80px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 20px;
+    z-index: 100;
+}
+#sect3 .portfolio { 
+    display: flex; 
+	padding: 2rem;
+    justify-content: space-evenly;
+}
+#sect3 .portfolio:after {
+    content: '';
+    min-width: 2rem;
+}
+#sect3 .portfolio div.port {
+    display: flex; 
+    background: #fff;
+    padding: 4rem 6rem;
+	border-radius: 1rem;
+	box-shadow: -1rem 0 1rem rgba(0, 0, 0, 0.2);
+	position: relative;
+	transition: all 0.2s ease-out;
+}
+#sect3 .portfolio div.port:not(:last-child) { margin-right: -6rem; }
+#sect3 .portfolio div.port:hover {
+    margin-right: -1rem; 
+    transform: translate(0, -1rem);}
+#sect3 .portfolio .port p.po {  width: 346px; height: 600px; }
+#sect3 .portfolio .port .content {
+    display: none;
+    color: #fff;
+    transition: all 0.5s;
+}
+#sect3 .portfolio .port:hover .content {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    height: 85%; 
+    width: 60%;
+    padding: 20px 20px; 
+}
+#sect3 .portfolio .port:hover .content button {
+    border-radius: 24px;
+    background: #dea5a4;
+    width: 80px;
+    height: 30px;
+    border: none;
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 23px;
+}
+
+
+#sect3 .portfolio .port p.po1 { background: url(../img/artmuseum2.png) center no-repeat; height: 730px; }
+#sect3 .portfolio .port p.po2 { background: url(../img/wavve2.png) center no-repeat; height: 730px; }
+
+
+/* 네번째 박스 contact me */
+#sect4 { background: #555;}
+#sect4 .inner { 
+    margin-top: 60px; 
+    border: 5px solid #000; 
+}
+#sect4 form { display: flex; flex-direction:column; background: #fff; padding: 30px 0; }
+#sect4 h2 {
+    font-size: 80px;
+    text-align: center;
+}
+#sect4 fieldset { display: flex;  justify-content: space-around; }
+#sect4 .left { 
+    margin-left: 30px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+#sect4 .left label { font-size: 30px; }
+#sect4 .left #memo { margin-top: 30px; height: 90%; margin-right: 20px;}
+#sect4 .right {
+    border-left: 3px solid #000;
+    padding-left: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#sect4 .right .images { 
+    display: flex; 
+    height: 30%;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+#sect4 .right .images img {
+    margin-right: 10px;
+}
+#sect4 .right .txt5 {
+    height: 30%;
+    position: absolute;
+    bottom: 100px;
+}
+#sect4 .right .txt5 p {
+    font-size: 30px; display: flex; flex-direction: column; margin-top: 20px;
+}
+#sect4 .right .txt5 p input {
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 800px;
+
+}
+#sect4 button { 
+    height: 50px;
+    width: 100px; 
+    transform: translate( 830px, 20px); 
+    font-size: 30px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    background: #dea5a4;
+    border:none;
+    border-radius: 24px;
+    letter-spacing: 5px;
+}
+  
+
+
+
