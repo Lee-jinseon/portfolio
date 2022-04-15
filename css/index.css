@@ -23,12 +23,11 @@ a { color: inherit; text-decoration: none;}
     width: 50px;
     height: 100%;
     background: transparent;
-    right: 125px;
+    right: 130px;
     bottom: 150px;
     color: #000;
-    font-size: 40px;
-    letter-spacing: 10PX;
-    z-index: 1;
+    font-size: 20px;
+    z-index: 9999999;
     align-items: flex-end;
     justify-content: center;
 }
@@ -37,13 +36,20 @@ a { color: inherit; text-decoration: none;}
 }
 #nav li { 
     display: inline-block;    
-    margin: 5px 0 0 50px;
+    margin: 5px 0 0 50px;    
     transition:all 0.5s;
-    
 }
 #nav li:hover { color:#dea5a4 } 
 #nav li.on {
     color:#dea5a4;
+}
+#nav li a { z-index: 99999;}
+#nav li a i {
+    border-radius: 50%;
+    border: 1px solid #000;
+    padding: 10px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+    background: #fff;
 }
 
  /* go top(smileflower) 이미지 */
@@ -65,22 +71,22 @@ section {
 }
 
 /* 첫번째 박스 intro */
+#sect1 { position: relative; overflow: hidden;}
 #sect1 > .sect1center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    z-index: 55;
 }
-#sect1 .mainimg { background: url(../img/ocean.jpeg);
-    height: 100%; 
-    width: 100%;
-}
+
 #sect1 .sect1txt { 
     position: absolute;
     top:30%;
     left: 30%;
     font-size: 50px;
+    color: #333;
 }
 
 @keyframes blink-effect {
@@ -97,8 +103,21 @@ section {
     color: #5b87f6;
 }
 #sect1 .copy{
-    float: right;
+    position: absolute;
     font-size: 15px;
+    z-index: 55;
+    right: 10%;
+    color: #333;
+}
+#sect1 .sect1txt span {
+    font-size: 80px;
+}
+#sect1 .vid { position: relative; }
+#sect1 .vid video { 
+    position: absolute;
+    top:0; 
+    left:13%;
+    box-shadow: 12px 12px 2px 2px rgba(0, 0, 0, 0.2) ;
 }
 
 /* 두번째 박스 profile & 스킬 그래프 */
@@ -185,6 +204,7 @@ section {
 #sect3 .portfolio { 
     display: flex; 
 	padding: 2rem;
+    margin-left: 150px;
     justify-content: space-evenly;
 }
 #sect3 .portfolio:after {
@@ -229,8 +249,8 @@ section {
     border: none;
     font-family: 'GangwonEdu_OTFBoldA';
     font-size: 23px;
+    /* box-shadow: 2px 2px 2px 2px #ad7978; */
 }
-
 
 #sect3 .portfolio .port p.po1 { background: url(../img/artmuseum2.png) center no-repeat; height: 730px; }
 #sect3 .portfolio .port p.po2 { background: url(../img/wavve2.png) center no-repeat; height: 730px; }
